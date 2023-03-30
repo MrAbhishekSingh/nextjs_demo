@@ -9,10 +9,12 @@ import { Box, Button, Grid, TextField } from "@mui/material";
 import { loginCustom } from "@/pages/redux/apiCall/registerRedux";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 export default function Login() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.userData);
+  const router = useRouter();
   console.log("user", user);
 
   React.useEffect(() => {
@@ -177,6 +179,7 @@ export default function Login() {
             )}
             <Button
               sx={{ my: 2 }}
+              
               className="btn"
               fullWidth
               variant="contained"
@@ -186,7 +189,7 @@ export default function Login() {
             </Button>
             <Typography color="gray">
               New on our platform?{" "}
-              <Button variant="text">Create an account</Button>
+              <Button onClick={() => router.push("/screen/signup")} variant="text">Create an account</Button>
             </Typography>
           </CardContent>
         </Box>

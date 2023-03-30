@@ -20,7 +20,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { registerCustom } from "@/pages/redux/apiCall/registerRedux";
 import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from 'next/navigation';
-import login from '../login'
 
 
 const SignupForm = () => {
@@ -32,7 +31,7 @@ const SignupForm = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (Object.keys(user).length) {
+    if (Object.keys(user).length > 0) {
       if (user.status === "success") {
         toast.success(user.msg);
       } else {
@@ -374,6 +373,7 @@ const SignupForm = () => {
                   className="btn"
                   fullWidth
                   variant="contained"
+                 style={{color: "#fff"}} 
                 >
                   login
                 </Button>

@@ -6,6 +6,8 @@ import store from "./redux/store/store";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import NavBar from './screen/navbar/navbar'
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -19,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Provider store={store}>
+      <NavBar/>
         <ToastContainer />
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />
