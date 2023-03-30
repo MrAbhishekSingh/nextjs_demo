@@ -54,6 +54,7 @@ const apiCallMethod = createSlice({
     [registerCustom.fulfilled]: (state, action) => {
       state.user = action.payload;
       state.loading = false;
+      localStorage.setItem('userData', JSON.stringify(action.payload))
     },
     [registerCustom.pending]: (state, action) => {
       state.loading = true;
