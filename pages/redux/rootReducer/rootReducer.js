@@ -1,6 +1,5 @@
 import userData from "../apiCall/registerRedux";
 
-
 const rootReducer = {
   userData,
 };
